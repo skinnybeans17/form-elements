@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form Elements</title>
+
+		<style>
+            input[type=checkbox] {
+                display: none;
+            }
+
+            input[type=checkbox] + label.switch {
+                width: 50px;
+                height: 30px;
+                display: inline-block;
+                background-color: #ddd;
+                border-radius: 30px;
+                position: relative;
+                transition: 200ms;
+            }
+
+            input[type=checkbox] + label.switch::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                background-color: #fff;
+                left: 2px;
+                top: 2px;
+                transition: 200ms;
+            }
+
+            input[type=checkbox]:checked + label.switch::before {
+                left: 22px;
+            }
+
+            input[type=checkbox]:checked + label.switch {
+                background-color: gold;
+            }
+
+            input[type=radio] {
+                display: none;
+                align-content: center;
+                text-align: center;
+                justify-content: left;
+                vertical-align: left;
+                position: absolute;
+            }
+
+            input[type=radio] + label.radio {
+                position: relative;
+                align-content: center;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                margin: 0.25rem 0 0.25rem 0;
+                justify-content: center;
+                vertical-align: middle;
+                align-items: center;
+            }
+
+            input[type=radio] + label.radio::before {
+                content: "";
+                width: 22px;
+                height: 22px;
+                border: 2px solid;
+                display: flex;
+                border-radius: 50%;
+                position: relative;
+                transition: 200ms;
+                align-content: center;
+                text-align: left;
+                justify-content: center;
+                vertical-align: middle;
+                align-items: center;
+            }
+
+            input[type=radio] + label.radio::after {
+                content: "";
+                width: 18px;
+                height: 18px;
+                background-color: transparent;
+                border-radius: 50%;
+                position: absolute;
+                transition: 200ms;
+                align-content: center;
+                text-align: left;
+                justify-content: left;
+                vertical-align: middle;
+                align-items: left;
+                vertical-align: auto;
+            }
+
+            input[type=radio]:checked + label.radio::before {
+                border-color: tomato;
+                justify-content: left;
+                vertical-align: left;
+                align-items: left;
+                position: relative;
+            }
+
+            input[type=radio]:checked + label.radio::after {
+                background-color: tomato;
+                justify-content: left;
+                vertical-align: left;
+                align-items: left;
+                position: relative;
+            }
+
+            .choice-container {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+            }
+
+            body{
+                background-color: orange;
+                text-align: center;
+                align-content: center;
+                align-self: center;
+                color: yellow;
+                justify-content: center;
+            }
+		</style>
+	</head>
+	<body>
+
+		<form>
+			<h1>Personality Assessment</h1>
+
+			<h2>Name</h2>
+
+			<input type="text">
+
+			<h2>Pet Preferences</h2>
+
+            <h3>Canine/Dog</h3>
+			<input type="checkbox" id="canine">
+			<label class="switch" for="canine"></label>
+
+            <h3>Feline/Cat</h3>
+			<input type="checkbox" id="feline">
+			<label class="switch" for="feline"></label>
+
+            <h3>Piscine/Lizard</h3>
+			<input type="checkbox" id="pscine">
+			<label class="switch" for="pscine"></label>
+			
+			<h2>Shoe Style</h2>
+			<input type="radio" id="vans" name="choice-container">
+			<label class="radio" for="vans">Vans</label>
+			
+			<input type="radio" id="converse" name="choice-container">
+			<label class="radio" for="converse">Converse</label>
+			
+			<input type="radio" id="nike" name="choice-container">
+			<label class="radio" for="nike">Nike</label>
+		</form>
+
+	</body>
+</html>
